@@ -36,7 +36,7 @@ const server = http.createServer(app);
 
 initializeSocket(server);
 
-app.listen(serverConfig.PORT, () => {
+server.listen(serverConfig.PORT, () => {
   logger.info(`Server is running on http://localhost:${serverConfig.PORT}`);
   logger.info(`Press Ctrl+C to stop the server.`);
 });
