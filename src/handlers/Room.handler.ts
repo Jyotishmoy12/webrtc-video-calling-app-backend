@@ -9,8 +9,8 @@ const roomHandler = (socket: Socket) => {
     socket.emit("room-created", { roomId }); // emitting the room id to the user that socket is connected
     logger.info(`Room created with id ${roomId}`);
   };
-  const joinedRoom = ({roomId}: {roomId: string}) => {
-    logger.info(`New user joined with id ${roomId}`);
+  const joinedRoom = ({roomId, peerId}: {roomId: string, peerId: string}) => {
+    logger.info(`New user joined with id ${roomId} with peer id ${peerId}`);
   };
   // when to call the above to function
   // we will call the above function when the client will emit events top create a room or join a room
