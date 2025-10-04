@@ -1,4 +1,6 @@
 import express from "express";
+import http from "http";
+import cors from "cors";
 import { serverConfig } from "./config";
 import v1Router from "./routers/v1/index.router";
 import v2Router from "./routers/v2/index.router";
@@ -7,10 +9,8 @@ import {
   genericErrorHandler,
 } from "./middlewares/error.middleware";
 import logger from "./config/logger.config";
-import { attachCorrelationIdMiddleware } from "./middlewares/correlation.middleware";
 import { initializeSocket } from "./config/socket.config";
-import http from "http";
-import cors from "cors";
+import { attachCorrelationIdMiddleware } from "./middlewares/correlation.middleware";
 
 const app = express();
 
